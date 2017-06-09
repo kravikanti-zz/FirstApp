@@ -1,12 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default class App extends React.Component {
+class Greeting extends Component {
+  render() {
+    return <Text>Hello {this.props.name}!</Text>;
+  }
+}
+
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HELLO</Text>
-
+        <Text>What's up?</Text>
+        <Greeting name="Rexxar" />
+        <Greeting name="Jaina" />
+        <Greeting name="Valeera" />
       </View>
     );
   }
@@ -15,7 +23,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "lavender",
     alignItems: "center",
     justifyContent: "center"
   }
